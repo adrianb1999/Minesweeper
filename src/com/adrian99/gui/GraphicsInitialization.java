@@ -29,19 +29,20 @@ public class GraphicsInitialization extends JFrame {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Map<String, Icon> iconMap = new HashMap<>();
-        iconMap.putIfAbsent("uncheckedSquare", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\uncheckedSquare.png"));
-        iconMap.putIfAbsent("square_1", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\1_square.png"));
-        iconMap.putIfAbsent("square_2", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\2_square.png"));
-        iconMap.putIfAbsent("square_3", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\3_square.png"));
-        iconMap.putIfAbsent("square_4", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\4_square.png"));
-        iconMap.putIfAbsent("square_5", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\5_square.png"));
-        iconMap.putIfAbsent("square_6", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\6_square.png"));
-        iconMap.putIfAbsent("square_7", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\7_square.png"));
-        iconMap.putIfAbsent("square_8", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\8_square.png"));
-        iconMap.putIfAbsent("bombSquare", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\bombSquare.png"));
-        iconMap.putIfAbsent("emptySquare", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\emptySquare.png"));
-        iconMap.putIfAbsent("flagSquare", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\flagSquare.png"));
-        iconMap.putIfAbsent("currentBombSquare", new ImageIcon("E:\\JAVA_LEARNING\\Projects\\Minesweeper\\src\\Resources\\currentBombSquare.png"));
+
+        iconMap.putIfAbsent("uncheckedSquare", new ImageIcon("./resources/uncheckedSquare.png"));
+        iconMap.putIfAbsent("square_1", new ImageIcon("./resources/1_square.png"));
+        iconMap.putIfAbsent("square_2", new ImageIcon("./resources/2_square.png"));
+        iconMap.putIfAbsent("square_3", new ImageIcon("./resources/3_square.png"));
+        iconMap.putIfAbsent("square_4", new ImageIcon("./resources/4_square.png"));
+        iconMap.putIfAbsent("square_5", new ImageIcon("./resources/5_square.png"));
+        iconMap.putIfAbsent("square_6", new ImageIcon("./resources/6_square.png"));
+        iconMap.putIfAbsent("square_7", new ImageIcon("./resources/7_square.png"));
+        iconMap.putIfAbsent("square_8", new ImageIcon("./resources/8_square.png"));
+        iconMap.putIfAbsent("bombSquare", new ImageIcon("./resources/bombSquare.png"));
+        iconMap.putIfAbsent("emptySquare", new ImageIcon("./resources/emptySquare.png"));
+        iconMap.putIfAbsent("flagSquare", new ImageIcon("./resources/flagSquare.png"));
+        iconMap.putIfAbsent("currentBombSquare", new ImageIcon("./resources/currentBombSquare.png"));
 
         for (int i = 0; i < mapWidth; i++)
             for (int j = 0; j < mapHeight; j++) {

@@ -11,12 +11,13 @@ public class MapGenerator {
     private final int numOfBombs;
 
     private int[][] mapMatrix;
-    List<Coordinates> bombsCoordinatesList = new ArrayList<>();
+    List<Coordinates> bombsCoordinatesList;
 
     public MapGenerator(int mapWidth, int mapHeight, int numOfBombs) {
         this.mapWidth = mapWidth;
         this.mapHeight = mapHeight;
         this.numOfBombs = numOfBombs;
+        bombsCoordinatesList = new ArrayList<>();
     }
 
     void generateMap() {
@@ -43,12 +44,13 @@ public class MapGenerator {
 
     //Bomb coordinates generator
     private void bombGenerator() {
+        Random randomNumber = new Random();
         while (bombsCoordinatesList.size() != numOfBombs) {
-            int x = new Random().nextInt(mapWidth);
-            int y = new Random().nextInt(mapHeight);
+            int x = randomNumber.nextInt(mapWidth);
+            int y = randomNumber.nextInt(mapHeight);
             if (mapMatrix[x][y] != 9) {
                 mapMatrix[x][y] = 9;
-                bombsCoordinatesList.add(new Coordinates(x,y));
+                bombsCoordinatesList.add(new Coordinates(x, y));
             }
         }
     }

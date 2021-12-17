@@ -42,24 +42,9 @@ public class GameParser {
                     squaresChecked++;
                     parse(i, j);
                 }
-        }
-        if (currentSquare.getType() == 1)
-            currentSquare.setSquareIcon("square_1");
-        if (currentSquare.getType() == 2)
-            currentSquare.setSquareIcon("square_2");
-        if (currentSquare.getType() == 3)
-            currentSquare.setSquareIcon("square_3");
-        if (currentSquare.getType() == 4)
-            currentSquare.setSquareIcon("square_4");
-        if (currentSquare.getType() == 5)
-            currentSquare.setSquareIcon("square_5");
-        if (currentSquare.getType() == 6)
-            currentSquare.setSquareIcon("square_6");
-        if (currentSquare.getType() == 7)
-            currentSquare.setSquareIcon("square_7");
-        if (currentSquare.getType() == 8)
-            currentSquare.setSquareIcon("square_8");
-        if (currentSquare.getType() == 9) {
+        } else if (currentSquare.getType() >= 1 && currentSquare.getType() <= 8)
+            currentSquare.setSquareIcon("square_" + currentSquare.getType());
+        else if (currentSquare.getType() == 9) {
             for (Coordinates coordinates : bombsCoordinatesList) {
                 squares[coordinates.getX()][coordinates.getY()].setSquareIcon("bombSquare");
             }
@@ -73,8 +58,7 @@ public class GameParser {
             currentSquare.setSquareState(SquareState.CHECKED);
             squaresChecked++;
         }
-        if (squaresChecked == (mapWidth * mapHeight - numOfBombs))
-        {
+        if (squaresChecked == (mapWidth * mapHeight - numOfBombs)) {
             gameState = GameState.WIN;
             gameManager.gameWin();
         }

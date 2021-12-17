@@ -7,13 +7,13 @@ import com.adrian99.gui.GraphicsInitialization;
 public class GameManager {
 
     GraphicsInitialization graphicsInitialization;
-    
+
     private int mapWidth;
     private int mapHeight;
     private int numOfBombs;
 
-    public GameManager()
-    {}
+    public GameManager() {
+    }
 
     public GameManager(int mapWidth, int mapHeight, int numOfBombs) {
         this.mapWidth = mapWidth;
@@ -24,7 +24,7 @@ public class GameManager {
     public void startGame() {
         MapGenerator mapGenerator = new MapGenerator(mapWidth, mapHeight, numOfBombs);
         mapGenerator.generateMap();
-        GameParser gameParser = new GameParser(mapWidth, mapHeight, numOfBombs, mapGenerator.getBombsCoordinatesList(),this);
+        GameParser gameParser = new GameParser(mapWidth, mapHeight, numOfBombs, mapGenerator.getBombsCoordinatesList(), this);
 
         int squareSize = 40;
         graphicsInitialization = new GraphicsInitialization(mapWidth, mapHeight, squareSize);
@@ -32,14 +32,14 @@ public class GameManager {
         gameParser.setSquares(graphicsInitialization.getSquares());
     }
 
-    public void gameOver()
-    {
-        new GameOver(graphicsInitialization.getFrame(), mapWidth, mapHeight,numOfBombs).showGameOver();
+    public void gameOver() {
+        new GameOver(graphicsInitialization.getFrame(), mapWidth, mapHeight, numOfBombs).showGameOver();
     }
-    public void gameWin()
-    {
-        new GameWin(graphicsInitialization.getFrame(), mapWidth, mapHeight,numOfBombs).showGameWin();
+
+    public void gameWin() {
+        new GameWin(graphicsInitialization.getFrame(), mapWidth, mapHeight, numOfBombs).showGameWin();
     }
+
     public void setMapWidth(int mapWidth) {
         this.mapWidth = mapWidth;
     }
